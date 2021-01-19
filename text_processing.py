@@ -82,7 +82,7 @@ def no_vowels(input_string):
     no_vowel_string = None
     new_string = ""
     for char in input_string:
-        if char not in "aeiou":
+        if char not in "aeiouAEIOU":
             new_string += char
     no_vowel_string = new_string
     return no_vowel_string
