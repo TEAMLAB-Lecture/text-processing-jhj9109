@@ -34,6 +34,19 @@ def normalize(input_string):
              'extra space'
     """
     normalized_string = None
+    # 앞 공백 삭제
+    index = 0
+    while index < len(input_string) and input_string[index] != " ":
+        index += 1
+    start_index = index
+    index = len(input_string)-1
+    # 뒤 공백 삭제
+    while index >= 0 and input_string[index] != " ":
+        index -=1
+    end_index = index
+    temp_string = input_string[start_index:end_index+1]
+    # 소문자 변환
+    normalized_string = temp_string.lower()
     return normalized_string
 
 
@@ -59,4 +72,9 @@ def no_vowels(input_string):
             ''W lv Pythn!'
     """
     no_vowel_string = None
+    new_string = ""
+    for char in input_string:
+        if char not in "aeiou":
+            new_string += char
+    no_vowel_string = new_string
     return no_vowel_string
