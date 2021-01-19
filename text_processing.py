@@ -36,12 +36,12 @@ def normalize(input_string):
     normalized_string = None
     # 앞 공백 삭제
     index = 0
-    while index < len(input_string) and input_string[index] != " ":
+    while index < len(input_string) and input_string[index] == " ":
         index += 1
     start_index = index
     index = len(input_string)-1
     # 뒤 공백 삭제
-    while index >= 0 and input_string[index] != " ":
+    while index >= 0 and input_string[index] == " ":
         index -=1
     end_index = index
     temp_string = input_string[start_index:end_index+1]
@@ -78,3 +78,5 @@ def no_vowels(input_string):
             new_string += char
     no_vowel_string = new_string
     return no_vowel_string
+# print(normalize("This is an example."))
+# print(normalize("   EXTRA   SPACE   "))
