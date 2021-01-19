@@ -46,7 +46,15 @@ def normalize(input_string):
     end_index = index
     temp_string = input_string[start_index:end_index+1]
     # 소문자 변환
-    normalized_string = temp_string.lower()
+    normalized_string = ""
+    for char in temp_string:
+        if char == " ":
+            if normalized_string[-1] == " ":
+                continue
+            else:
+                normalized_string += char
+        else:
+            normalized_string += char.lower()
     return normalized_string
 
 
@@ -80,3 +88,5 @@ def no_vowels(input_string):
     return no_vowel_string
 # print(normalize("This is an example."))
 # print(normalize("   EXTRA   SPACE   "))
+# print(no_vowels("This is an example."))
+# print(no_vowels("We love Python!"))
